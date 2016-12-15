@@ -43,13 +43,11 @@ function Realm(){
 
 	vm.drawTile = function(x, y, removeBorder, removeBorderFromCousin){
 
-		console.log(x, y, removeBorder)
-
 		var $tile = $('<div></div>')
 		$tile.css('width', vm.tile.width - 4)
 		$tile.css('height', vm.tile.height - 4)
-		$tile.css('left', vm.tile.width * x)
-		$tile.css('top', vm.tile.height * y)
+		$tile.css('left', (vm.tile.width * x) - vm.tile.width)
+		$tile.css('top', (vm.tile.height * y) - vm.tile.height)
 		$tile.addClass('tile')
 		$tile[0].onMap = {
 			x: x,
@@ -184,3 +182,6 @@ function Realm(){
 
 var realm = new Realm()
 realm.drawTile(1, 1)
+window.setTimeout(function(){
+	realm.drawTile(25, 25)
+}, 0)
