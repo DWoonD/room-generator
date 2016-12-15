@@ -170,7 +170,9 @@ function Realm(){
 			var itemDraw = vm.drawList[0]
 			console.log(x, y, ' > ', itemDraw)
 			vm.drawList.splice(0, 1)
-			vm.drawTile(itemDraw[0], itemDraw[1], itemDraw[2], itemDraw[3])
+			window.setTimeout(function(){
+				vm.drawTile(itemDraw[0], itemDraw[1], itemDraw[2], itemDraw[3])
+			}, 500)
 		}
 
 	}
